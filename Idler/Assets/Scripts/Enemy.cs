@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -12,7 +13,11 @@ public class Enemy : MonoBehaviour
     
     [SerializeField] private float loopTime;
 
-    private bool isDamageable = false;
+    [SerializeField] private bool isDamageable = false;
+    
+    [SerializeField] private Vector3 targetPosition;
+
+    [SerializeField] private float movementSpeed;
 
     private void Start()
     {
@@ -25,6 +30,8 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementSpeed * Time.deltaTime);
         
         Debug.Log(health);
     }
