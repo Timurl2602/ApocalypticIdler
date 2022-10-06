@@ -1,6 +1,6 @@
 using System;
 using System.Collections;
-using Enemies;
+using IdleGame;
 using UnityEngine;
 using Random = UnityEngine.Random;
 

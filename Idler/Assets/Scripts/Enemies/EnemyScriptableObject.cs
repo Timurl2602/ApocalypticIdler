@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Enemies
+namespace IdleGame
 {
     [CreateAssetMenu(fileName = "Enemy", menuName = "Utility/Enemy", order = 0)]
     public class EnemyScriptableObject : ScriptableObject
