@@ -9,7 +9,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Hero.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/IdleEngine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WaveManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -72,7 +71,7 @@
       <workItem from="1664889197417" duration="5853000" />
       <workItem from="1664951836765" duration="12869000" />
       <workItem from="1664976848522" duration="1996000" />
-      <workItem from="1665040462515" duration="6034000" />
+      <workItem from="1665040462515" duration="9802000" />
     </task>
     <servers />
   </component>

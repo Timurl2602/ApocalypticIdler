@@ -12,12 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4224513b572947fcaa465e446c563785, type: 3}
   m_Name: Generator
   m_EditorClassIdentifier: 
-  owned: 1
-  baseCost: 3
-  revenue: 5
-  baseproductionTimeInSeconds: 2
-  costIncrease: 1.1
-  costForNextUpgrade: 3
-  productionCyleinSeconds: 0
+  owned: 0
+  baseCost: 0
+  revenue: 0
+  costIncrease: 0
   upgradeAmount: 0
-  productionTimeInSeconds: 0
+  costForNextUpgrade: 0

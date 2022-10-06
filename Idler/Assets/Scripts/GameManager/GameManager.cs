@@ -20,16 +20,6 @@ namespace IdleGame
             set => money = value;
         }
 
-        public void Tick(float deltaTimeInSeconds)
-        {
-            money += CalculateProgression(deltaTimeInSeconds);
-        }
-
-        private double CalculateProgression(float deltaTimeInSeconds)
-        {
-            return Generators == null ? 0 : Generators.Sum(generator => generator.Produce(deltaTimeInSeconds));
-        }
-        
         private void Awake() 
         {
 
@@ -42,6 +32,16 @@ namespace IdleGame
             {
                 Destroy(gameObject);
             }
+        }
+
+        public void AddMoney(int amount)
+        {
+            money += amount;
+        }
+
+        public void TakeMoney(int amount)
+        {
+            money -= amount;
         }
     }
 }
