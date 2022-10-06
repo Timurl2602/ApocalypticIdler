@@ -1,7 +1,5 @@
-﻿using System;
-using System.Linq;
-using UnityEngine;
-using UnityEngine.PlayerLoop;
+﻿using UnityEngine;
+
 
 namespace IdleGame
 {
@@ -10,7 +8,9 @@ namespace IdleGame
 
         public static GameManager instance;
 
-        public GeneratorScriptableObject[] Generators;
+        public float wave;
+
+        public float stage;
 
         [SerializeField]
         private double money;
@@ -32,14 +32,15 @@ namespace IdleGame
             {
                 Destroy(gameObject);
             }
+            
         }
 
-        public void AddMoney(int amount)
+        public void AddMoney(double amount)
         {
             money += amount;
         }
 
-        public void TakeMoney(int amount)
+        public void TakeMoney(double amount)
         {
             money -= amount;
         }

@@ -16,7 +16,7 @@ namespace IdleGame
 
 
 
-        private void UpdateGeneratorCost()
+        public void UpdateGeneratorCost()
         {
             //calculation for generator costs
             var calcTop = Mathf.Pow(costIncrease, owned);

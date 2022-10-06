@@ -17,38 +17,53 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     private GameObject[] spawnPoints;
 
-    private int wave;
+    public float baseSpawnCount;
 
-    private int enemyCount;
-    
-    
+    public float spawnIncrease;
 
+    public float enemiesKilled;
+
+    public float enemiesToSpawn;
+
+    public bool spawnEnemies;
+
+    public int spawnedEnemy;
+    
 
     void Start()
     {
+        WaveCalculation();
         StartCoroutine(SpawnEnemy(enemy));
     }
 
     private void Update()
     {
-        // !!!!!!
-        UpdateHealth();
+        if (enemiesKilled == enemiesToSpawn)
+        {
+            GameManager.instance.wave++;
+            enemiesKilled = 0;
+            spawnedEnemy = 0;
+            WaveCalculation();
+            StartCoroutine(SpawnEnemy(enemy));
+        }
     }
-    
+
     private IEnumerator SpawnEnemy(GameObject enemy)
     {
-        var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
-        GameObject newEnemy = Instantiate(enemy, spawnPoint.position, Quaternion.identity);
-        yield return new WaitForSeconds(spawnSpeed);
+        while (spawnedEnemy < enemiesToSpawn)
+        {
+            var spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].transform;
+            GameObject newEnemy = Instantiate(enemy, spawnPoint.position, Quaternion.identity);
+            spawnedEnemy++;
+            yield return new WaitForSeconds(spawnSpeed);
+        }
 
     }
 
-    public void UpdateHealth()
+    private void WaveCalculation()
     {
-  
-        var x = 100 * Math.Pow(1.7, 3 - 1);
-        Debug.Log(x);
+        enemiesToSpawn = (float)(baseSpawnCount*Math.Pow(spawnIncrease, GameManager.instance.wave));
     }
-    
-    
+
+
 }
