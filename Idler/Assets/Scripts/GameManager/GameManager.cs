@@ -8,12 +8,12 @@ namespace IdleGame
 
         public static GameManager instance;
 
+        [Header("Wave Variables")]
+        
         public float wave;
-
         public float stage;
 
-        [SerializeField]
-        private double money;
+        [SerializeField] private double money;
         public double Money
         {
             get { return money; }

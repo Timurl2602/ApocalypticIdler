@@ -7,15 +7,19 @@ namespace IdleGame
 {
     public class Enemy : MonoBehaviour
     {
+        [Header("References")]
+        
         public Hero hero;
-
         public WaveManager waveManager;
-
         public EnemyScriptableObject enemy;
-
+        
+        [Header("Stats")]
+        
         [SerializeField] private double health;
-
         [SerializeField] private double maxHealth;
+        [SerializeField] private float movementSpeed;
+        
+        private bool isDamageable;
 
         public double newHealth;
         public double MaxHealth
@@ -23,14 +27,11 @@ namespace IdleGame
             get { return maxHealth; }
             set => MaxHealth = value;
         }
-
-        [SerializeField] private bool isDamageable = false;
-
-        [SerializeField] private float movementSpeed;
+        
+        
 
         private void Start()
         {
-            
             maxHealth = enemy.health;
             movementSpeed = enemy.speed;
             health = maxHealth;

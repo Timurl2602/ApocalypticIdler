@@ -8,14 +8,10 @@ public class UpgradeShopItem : MonoBehaviour
         [Header("References")]
         
         [SerializeField] public GeneratorScriptableObject upgrade;
-
         [SerializeField] public TextMeshProUGUI upgradeNameText;
-
         [SerializeField] public TextMeshProUGUI upgradeCostText;
-
         [SerializeField] public TextMeshProUGUI ownedText;
-    
-
+        
         //[SerializeField] public Image icon;
 
         private void Start()

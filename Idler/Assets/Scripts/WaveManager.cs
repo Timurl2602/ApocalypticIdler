@@ -6,28 +6,21 @@ using Random = UnityEngine.Random;
 
 public class WaveManager : MonoBehaviour
 {
-    public Enemy enemyScript;
+    [Header("References")]
     
-    [SerializeField]
-    private GameObject enemy;
-
-    [SerializeField]
-    private float spawnSpeed;
+    [SerializeField] private GameObject enemy;
+    [SerializeField] private GameObject[] spawnPoints;
     
-    [SerializeField]
-    private GameObject[] spawnPoints;
-
-    public float baseSpawnCount;
-
-    public float spawnIncrease;
-
-    public float enemiesKilled;
-
-    public float enemiesToSpawn;
-
-    public bool spawnEnemies;
-
-    public int spawnedEnemy;
+    [Header("Wave Manipulation")]
+    
+    [SerializeField] private float spawnSpeed;
+    [SerializeField] private float baseSpawnCount;
+    [SerializeField] private float spawnIncrease;
+    
+    [ReadOnly] public float enemiesKilled;
+    
+    [HideInInspector] public float enemiesToSpawn;
+    [HideInInspector] public int spawnedEnemy;
     
 
     void Start()
