@@ -12,12 +12,12 @@ namespace IdleGame
         public string upgradeName;
        
         public int owned;
+        public int upgradeAmount;
         
         public double baseCost;
         public double costForNextUpgrade;
         
         public float costIncrease;
-        public float upgradeAmount;
 
 
 
@@ -29,9 +29,8 @@ namespace IdleGame
             var calcBottom = Mathf.Pow(costIncrease, owned + upgradeAmount);
 
             costForNextUpgrade = baseCost + (calcTop - calcBottom) / (1 - costIncrease);
-
         }
-        
+
         private void Precalculate()
         {
             UpdateGeneratorCost();
@@ -41,7 +40,6 @@ namespace IdleGame
         private void OnValidate()
         {
             Precalculate();
-
         }
 
     }

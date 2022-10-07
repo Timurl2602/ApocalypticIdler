@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CurrencyIncrease
   m_EditorClassIdentifier: 
   upgradeName: Currency Dropped
-  owned: 0
-  baseCost: 800
-  costIncrease: 5
+  owned: 1
   upgradeAmount: 1
-  costForNextUpgrade: 801
+  baseCost: 500
+  costForNextUpgrade: 501.19999976158147
+  costIncrease: 1.2

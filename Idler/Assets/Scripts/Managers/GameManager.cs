@@ -32,7 +32,6 @@ namespace IdleGame
             {
                 Destroy(gameObject);
             }
-            
         }
 
         public void AddMoney(double amount)

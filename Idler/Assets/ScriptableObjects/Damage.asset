@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Damage
   m_EditorClassIdentifier: 
   upgradeName: Damage
-  owned: 0
-  baseCost: 100
-  costIncrease: 2.1
+  owned: 1
   upgradeAmount: 1
-  costForNextUpgrade: 101
+  baseCost: 100
+  costForNextUpgrade: 101.09999988079073
+  costIncrease: 1.1
