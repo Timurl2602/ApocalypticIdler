@@ -457,10 +457,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f568c41746d9746b0715192096d9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrade: {fileID: 11400000, guid: 56cc438ccf2041a4b9bed9072383d37b, type: 2}
-  upgradeNameText: {fileID: 3526677530065598009}
-  upgradeCostText: {fileID: 3526677528993195691}
-  ownedText: {fileID: 3526677530927211795}
+  _upgrade: {fileID: 0}
+  _upgradeNameText: {fileID: 3526677530065598009}
+  _upgradeCostText: {fileID: 3526677528993195691}
+  _ownedText: {fileID: 3526677530927211795}
+  _buyAmount: 1
 --- !u!1 &3526677530927211821
 GameObject:
   m_ObjectHideFlags: 0

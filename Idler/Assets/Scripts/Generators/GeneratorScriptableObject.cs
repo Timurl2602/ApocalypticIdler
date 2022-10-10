@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
 namespace IdleGame
@@ -18,6 +19,7 @@ namespace IdleGame
         public double CostForNextUpgrade;
         
         public float CostIncrease;
+        public float UpgradeIncrease;
 
 
 
@@ -41,11 +43,6 @@ namespace IdleGame
         {
             Precalculate();
         }
-
-        private void DamageCalculation()
-        {
-            
-        }
-
+        
     }
 }

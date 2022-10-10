@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 namespace IdleGame
@@ -10,7 +9,6 @@ namespace IdleGame
     {
         [Header("References")]
         
-        public Hero Hero;
         public WaveManager WaveManager;
         public EnemyScriptableObject EnemyScriptable;
         public Animator Anim;
@@ -23,7 +21,7 @@ namespace IdleGame
 
         
         private int _randomPosition;
-        private bool _isDamageable;
+        [ReadOnly] private bool _isDamageable;
 
         private new Vector3 _targetPosition;
 
@@ -39,20 +37,13 @@ namespace IdleGame
             get { return Health; }
             set => Health = value;
         }
-
-        /*public void Init(Hero hero, WaveManager waveManager)
-        {
-            
-        }
-        */
+        
         private void Start()
         {
-            _maxHealth = EnemyScriptable.health;
-            _movementSpeed = EnemyScriptable.speed;
-
-            Hero = GameObject.Find("Hero").GetComponent<Hero>();
-            WaveManager = GameObject.Find("WaveManager").GetComponent<WaveManager>();
+            _maxHealth = EnemyScriptable.Health;
+            _movementSpeed = EnemyScriptable.Speed;
             
+            WaveManager = GameObject.Find("WaveManager").GetComponent<WaveManager>();
             Anim = GetComponent<Animator>();
             Anim.SetBool("isRunning", true);
 
@@ -72,13 +63,13 @@ namespace IdleGame
             if (_health <= 0)
             {
                 Destroy(gameObject);
-                Anim.SetBool("isDeath", true);
-                WaveManager.enemiesKilled++;
+                Anim.SetBool("isDying", true);
+                WaveManager.EnemiesKilled++;
                 GameManager.Instance.AddMoney(50);
             }
             else
             {
-                Anim.SetBool("isDeath", false);
+                Anim.SetBool("isDying", false);
             }
 
             if (transform.position == _targetPosition)
@@ -91,22 +82,20 @@ namespace IdleGame
                 Anim.SetBool("isRunning", true);
             }
             
-            
-            
         }
         
 
         public void CalculateEnemyHealth()
         {
-            newHealth = 100 * Math.Pow(EnemyScriptable.healthIncrease, GameManager.Instance.Wave - 1);
+            newHealth = 100 * Math.Pow(EnemyScriptable.HealthIncrease, GameManager.Instance.Wave - 1);
             _maxHealth = newHealth;
         }
         public IEnumerator TakeDamage()
         {
             while (_isDamageable)
             {
-                yield return new WaitForSeconds(Hero.AttackSpeed);
-                _health -= Hero.HeroDamage;
+                _health -= GameManager.Instance.HeroDamage;
+                yield return new WaitForSeconds(GameManager.Instance.AttackSpeed);
             }
         }
 

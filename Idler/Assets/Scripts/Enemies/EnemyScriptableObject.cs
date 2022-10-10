@@ -5,15 +5,11 @@ namespace IdleGame
     [CreateAssetMenu(fileName = "Enemy", menuName = "Utility/Enemy", order = 0)]
     public class EnemyScriptableObject : ScriptableObject
     {
-        public int health = 100;
-        public float healthIncrease = 1.7f;
-        public float speed = 3f;
+        public int Health = 100;
+        public float HealthIncrease = 1.7f;
+        public float Speed = 3f;
         
     }
-    
-    
-    
-    
 }
 
 

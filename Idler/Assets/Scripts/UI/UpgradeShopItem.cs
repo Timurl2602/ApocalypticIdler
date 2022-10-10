@@ -1,8 +1,6 @@
-using System;
 using IdleGame;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UpgradeShopItem : MonoBehaviour
 {
@@ -14,15 +12,12 @@ public class UpgradeShopItem : MonoBehaviour
         [SerializeField] private TextMeshProUGUI _ownedText;
 
         [SerializeField] private int _buyAmount = 1;
-        
-        //[SerializeField] public Image icon;
 
         private void Start()
         {
             _upgrade.Owned = 1;
             ShopInterface();
         }
-        
 
         private void Update()
         {
@@ -38,20 +33,49 @@ public class UpgradeShopItem : MonoBehaviour
             };
             
         }
-        
-        
 
         public void BuyUpgrade()
         {
             if (GameManager.Instance.Money >= _upgrade.CostForNextUpgrade)
             {
-                _upgrade.UpdateGeneratorCost();
                 GameManager.Instance.TakeMoney(_upgrade.CostForNextUpgrade);
-                _upgrade.Owned += _upgrade.UpgradeAmount;
+                EventManager.OnBuy(_upgrade.UpgradeName, _buyAmount);
             }
-
+        }
+        
+        /*
+        private void OnEnable()
+        {
+            EventManager.OnBuy += OnBuy;
         }
 
+        private void OnDisable()
+        {
+            EventManager.OnBuy -= OnBuy;
+        }
+        
+        private void OnBuy(string upgradeName, int upgradeAmount)
+        {
+            Debug.Log(upgradeName);
+            Debug.Log(upgradeAmount);
+
+            switch (upgradeName)
+            {
+                case Constants.AttackUpgradeId:
+                    //var damageCalculation = HeroDamage * Mathf.Pow(UpgradeIncrease, Owned);
+                    //HeroDamage = damageCalculation;
+                    _upgrade.Owned += upgradeAmount;
+                    break;
+                case Constants.AttackspeedUpgradeId:
+                    _upgrade.Owned += upgradeAmount;
+                    break;
+                case Constants.CurrencyIncreaseId:
+                    _upgrade.Owned += upgradeAmount;
+                    break;
+            }
+            
+        }
+*/
         private void ShopInterface()
         {
             _upgradeNameText.text = _upgrade.UpgradeName;

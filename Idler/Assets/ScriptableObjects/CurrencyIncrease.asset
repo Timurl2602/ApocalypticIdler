@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4224513b572947fcaa465e446c563785, type: 3}
   m_Name: CurrencyIncrease
   m_EditorClassIdentifier: 
-  upgradeName: Currency Dropped
-  owned: 1
-  upgradeAmount: 1
-  baseCost: 500
-  costForNextUpgrade: 501.19999976158147
-  costIncrease: 1.2
+  UpgradeName: Currency Increase
+  Owned: 1
+  UpgradeAmount: 1
+  BaseCost: 500
+  CostForNextUpgrade: 502
+  CostIncrease: 2
+  UpgradeIncrease: 0

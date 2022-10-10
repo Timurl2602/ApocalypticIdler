@@ -9,7 +9,6 @@ public class WaveManager : MonoBehaviour
     [Header("References")]
     
     [SerializeField] private GameObject _enemy;
-    [SerializeField] private GameObject _hero;
     [SerializeField] private GameObject[] _spawnPoints;
     
     [Header("Wave Manipulation")]
@@ -18,24 +17,23 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private float _baseSpawnCount;
     [SerializeField] private float _spawnIncrease;
     
-    [ReadOnly] public float enemiesKilled;
-    
-    [HideInInspector] public float EnemiesToSpawn;
-    [HideInInspector] public int SpawnedEnemy;
+    [ReadOnly] public float EnemiesKilled;
+    [ReadOnly] public float EnemiesToSpawn;
+    [ReadOnly] public int SpawnedEnemy;
     
 
     void Start()
     {
-        WaveCalculation();
+        EnemiesToSpawn = _baseSpawnCount;
         StartCoroutine(SpawnEnemy(_enemy));
     }
 
     private void Update()
     {
-        if (enemiesKilled == EnemiesToSpawn)
+        if (EnemiesKilled >= EnemiesToSpawn)
         {
             GameManager.Instance.Wave++;
-            enemiesKilled = 0;
+            EnemiesKilled = 0;
             SpawnedEnemy = 0;
             WaveCalculation();
             StartCoroutine(SpawnEnemy(_enemy));
@@ -48,8 +46,6 @@ public class WaveManager : MonoBehaviour
         {
             var spawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)].transform;
             GameObject newEnemy = Instantiate(enemy, spawnPoint.position, Quaternion.identity);
-            //var enemyComponent = newEnemy.GetComponent<Enemy>();
-            //enemyComponent.Init(hero, this);
             SpawnedEnemy++;
             yield return new WaitForSeconds(_spawnSpeed);
         }
