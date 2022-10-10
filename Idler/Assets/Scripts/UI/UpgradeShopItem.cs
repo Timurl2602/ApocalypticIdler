@@ -8,18 +8,18 @@ public class UpgradeShopItem : MonoBehaviour
 {
         [Header("References")]
 
-        [SerializeField] public GeneratorScriptableObject upgrade;
-        [SerializeField] public TextMeshProUGUI upgradeNameText;
-        [SerializeField] public TextMeshProUGUI upgradeCostText;
-        [SerializeField] public TextMeshProUGUI ownedText;
+        [SerializeField] private GeneratorScriptableObject _upgrade;
+        [SerializeField] private TextMeshProUGUI _upgradeNameText;
+        [SerializeField] private TextMeshProUGUI _upgradeCostText;
+        [SerializeField] private TextMeshProUGUI _ownedText;
 
-        [SerializeField] public int buyAmount = 1;
+        [SerializeField] private int _buyAmount = 1;
         
         //[SerializeField] public Image icon;
 
         private void Start()
         {
-            upgrade.owned = 1;
+            _upgrade.Owned = 1;
             ShopInterface();
         }
         
@@ -27,14 +27,14 @@ public class UpgradeShopItem : MonoBehaviour
         private void Update()
         {
             ShopInterface();
-            upgrade.upgradeAmount = buyAmount;
-            upgrade.UpdateGeneratorCost();
-            buyAmount = UiManager.instance.buyMode switch
+            _upgrade.UpgradeAmount = _buyAmount;
+            _upgrade.UpdateGeneratorCost();
+            _buyAmount = UiManager.Instance.BuyMode switch
             {
                 1 => 1,
                 2 => 10,
                 3 => 100,
-                _ => buyAmount
+                _ => _buyAmount
             };
             
         }
@@ -43,20 +43,20 @@ public class UpgradeShopItem : MonoBehaviour
 
         public void BuyUpgrade()
         {
-            if (GameManager.instance.Money >= upgrade.costForNextUpgrade)
+            if (GameManager.Instance.Money >= _upgrade.CostForNextUpgrade)
             {
-                upgrade.UpdateGeneratorCost();
-                GameManager.instance.TakeMoney(upgrade.costForNextUpgrade);
-                upgrade.owned += upgrade.upgradeAmount;
+                _upgrade.UpdateGeneratorCost();
+                GameManager.Instance.TakeMoney(_upgrade.CostForNextUpgrade);
+                _upgrade.Owned += _upgrade.UpgradeAmount;
             }
 
         }
 
         private void ShopInterface()
         {
-            upgradeNameText.text = upgrade.upgradeName;
-            upgradeCostText.text = string.Format((upgrade.costForNextUpgrade < 1000) ? "{0:F2}" : "{0:0.00e0}", upgrade.costForNextUpgrade) + "$";
-            ownedText.text = "Owned: " + upgrade.owned;
+            _upgradeNameText.text = _upgrade.UpgradeName;
+            _upgradeCostText.text = string.Format((_upgrade.CostForNextUpgrade < 1000) ? "{0:F2}" : "{0:0.00e0}", _upgrade.CostForNextUpgrade) + "$";
+            _ownedText.text = "Owned: " + _upgrade.Owned;
         }
         
         

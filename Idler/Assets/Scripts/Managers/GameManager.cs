@@ -6,26 +6,26 @@ namespace IdleGame
     public class GameManager : MonoBehaviour
     {
 
-        public static GameManager instance;
+        public static GameManager Instance;
 
         [Header("Wave Variables")]
         
-        public float wave;
-        public float stage;
+        public float Wave;
+        public float Stage;
 
-        [SerializeField] private double money;
+        [SerializeField] private double _money;
         public double Money
         {
-            get { return money; }
-            set => money = value;
+            get { return _money; }
+            set => _money = value;
         }
 
         private void Awake() 
         {
 
-            if (instance == null)
+            if (Instance == null)
             {
-                instance = this;
+                Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
             else
@@ -36,12 +36,12 @@ namespace IdleGame
 
         public void AddMoney(double amount)
         {
-            money += amount;
+            _money += amount;
         }
 
         public void TakeMoney(double amount)
         {
-            money -= amount;
+            _money -= amount;
         }
     }
 }

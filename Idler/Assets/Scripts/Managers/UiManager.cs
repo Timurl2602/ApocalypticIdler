@@ -5,17 +5,17 @@ namespace IdleGame
 {
     public class UiManager : MonoBehaviour
     {
-        public static UiManager instance;
+        public static UiManager Instance;
         
-        public TextMeshProUGUI buyText;
-        public int buyMode;
+        public TextMeshProUGUI BuyText;
+        public int BuyMode;
         
         private void Awake() 
         {
 
-            if (instance == null)
+            if (Instance == null)
             {
-                instance = this;
+                Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
             else
@@ -27,25 +27,25 @@ namespace IdleGame
 
         private void Start()
         {
-            buyMode = 1;
-            buyText.text = buyMode.ToString();
+            BuyMode = 1;
+            BuyText.text = BuyMode.ToString();
         }
 
         public void ChangeBuyMode()
         {
-            switch (buyMode)
+            switch (BuyMode)
             {
                 default:
-                    buyMode = 1;
-                    buyText.text = "1";
+                    BuyMode = 1;
+                    BuyText.text = "1";
                     break;
                 case 1:
-                    buyMode = 2;
-                    buyText.text = "10";
+                    BuyMode = 2;
+                    BuyText.text = "10";
                     break;
                 case 2:
-                    buyMode = 3;
-                    buyText.text = "100";
+                    BuyMode = 3;
+                    BuyText.text = "100";
                     break;
             }
         }

@@ -2,20 +2,22 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
-    [SerializeField] private int heroDamage;
+    [SerializeField] private int _heroDamage;
     
     public int HeroDamage
     {
-        get { return heroDamage; }
-        set => heroDamage = value;
+        get { return _heroDamage; }
+        set => _heroDamage = value;
     }
 
-    [SerializeField] private int attackSpeed;
+    [SerializeField] private int _attackSpeed;
 
     public int AttackSpeed
     {
-        get { return attackSpeed; }
-        set => attackSpeed = value;
+        get { return _attackSpeed; }
+        set => _attackSpeed = value;
     }
+    
+    
 
 }

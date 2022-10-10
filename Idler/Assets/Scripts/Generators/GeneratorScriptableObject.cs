@@ -9,15 +9,15 @@ namespace IdleGame
         
         [Header("Upgrade Variables")]
         
-        public string upgradeName;
+        public string UpgradeName;
        
-        public int owned;
-        public int upgradeAmount;
+        public int Owned;
+        public int UpgradeAmount;
         
-        public double baseCost;
-        public double costForNextUpgrade;
+        public double BaseCost;
+        public double CostForNextUpgrade;
         
-        public float costIncrease;
+        public float CostIncrease;
 
 
 
@@ -25,10 +25,10 @@ namespace IdleGame
         public void UpdateGeneratorCost()
         {
             //calculation for generator costs
-            var calcTop = Mathf.Pow(costIncrease, owned);
-            var calcBottom = Mathf.Pow(costIncrease, owned + upgradeAmount);
+            var calcTop = Mathf.Pow(CostIncrease, Owned);
+            var calcBottom = Mathf.Pow(CostIncrease, Owned + UpgradeAmount);
 
-            costForNextUpgrade = baseCost + (calcTop - calcBottom) / (1 - costIncrease);
+            CostForNextUpgrade = BaseCost + (calcTop - calcBottom) / (1 - CostIncrease);
         }
 
         private void Precalculate()
@@ -40,6 +40,11 @@ namespace IdleGame
         private void OnValidate()
         {
             Precalculate();
+        }
+
+        private void DamageCalculation()
+        {
+            
         }
 
     }
