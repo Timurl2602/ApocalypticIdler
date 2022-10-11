@@ -51,7 +51,11 @@ namespace IdleGame
                     break;
             }
         }
-        
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
         
     }
    
