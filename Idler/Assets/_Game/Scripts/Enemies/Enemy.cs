@@ -50,7 +50,7 @@ namespace IdleGame
             CalculateEnemyHealth();
             _health = _maxHealth;
 
-            _randomPosition = Random.Range(-8, -6);
+            _randomPosition = Random.Range(-8, -5);
             transform.rotation = Quaternion.Euler(0, -180, 0);
             _targetPosition = new Vector3(_randomPosition, transform.localPosition.y, 0);
         }
