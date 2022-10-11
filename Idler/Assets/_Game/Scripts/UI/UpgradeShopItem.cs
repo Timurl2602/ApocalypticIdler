@@ -43,39 +43,6 @@ public class UpgradeShopItem : MonoBehaviour
             }
         }
         
-        /*
-        private void OnEnable()
-        {
-            EventManager.OnBuy += OnBuy;
-        }
-
-        private void OnDisable()
-        {
-            EventManager.OnBuy -= OnBuy;
-        }
-        
-        private void OnBuy(string upgradeName, int upgradeAmount)
-        {
-            Debug.Log(upgradeName);
-            Debug.Log(upgradeAmount);
-
-            switch (upgradeName)
-            {
-                case Constants.AttackUpgradeId:
-                    //var damageCalculation = HeroDamage * Mathf.Pow(UpgradeIncrease, Owned);
-                    //HeroDamage = damageCalculation;
-                    _upgrade.Owned += upgradeAmount;
-                    break;
-                case Constants.AttackspeedUpgradeId:
-                    _upgrade.Owned += upgradeAmount;
-                    break;
-                case Constants.CurrencyIncreaseId:
-                    _upgrade.Owned += upgradeAmount;
-                    break;
-            }
-            
-        }
-*/
         private void ShopInterface()
         {
             _upgradeNameText.text = _upgrade.UpgradeName;

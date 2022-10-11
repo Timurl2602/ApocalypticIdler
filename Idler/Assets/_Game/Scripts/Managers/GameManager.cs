@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -7,15 +8,19 @@ namespace IdleGame
     public class GameManager : MonoBehaviour
     {
 
+        [Header("References")]
         public static GameManager Instance;
-
         public List<GeneratorScriptableObject> generators;
 
         [Header("Wave Variables")]
-        
         public float Wave;
+
+        [Header("Hero Variables")]
+        public float BaseHeroDamage;
         public float HeroDamage;
         public int AttackSpeed;
+        
+        [Header("Player Variables")]
         public double Money;
 
         private void Awake() 
@@ -49,8 +54,11 @@ namespace IdleGame
 
             generator.Owned++;
             generator.UpdateGeneratorCost();
+            
+            var damageCalculation = BaseHeroDamage * Mathf.Pow(generator.UpgradeIncrease, generator.Owned);
+            HeroDamage = damageCalculation;
 
-            // calculate
+            Debug.Log(damageCalculation);
         }
         
         public void AddMoney(double amount)
