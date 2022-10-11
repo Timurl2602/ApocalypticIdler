@@ -52,7 +52,7 @@ namespace IdleGame
             if (generator == null)
                 return;
 
-            generator.Owned++;
+            generator.Owned += upgradeAmount;
             generator.UpdateGeneratorCost();
             
             var damageCalculation = BaseHeroDamage * Mathf.Pow(generator.UpgradeIncrease, generator.Owned);

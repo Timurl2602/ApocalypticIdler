@@ -1,3 +1,4 @@
+using IdleGame;
 using UnityEngine;
 
 public class ShowShop : MonoBehaviour
@@ -7,10 +8,15 @@ public class ShowShop : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B) && !UiManager.Instance.IsPaused)
         {
-            isShopOpen = !isShopOpen;
-            _shop.SetActive(isShopOpen);
+            OpenShop();
         }
+    }
+
+    public void OpenShop()
+    {
+        isShopOpen = !isShopOpen;
+        _shop.SetActive(isShopOpen);
     }
 }

@@ -6,6 +6,9 @@ using Random = UnityEngine.Random;
 
 public class WaveManager : MonoBehaviour
 {
+    
+    public static WaveManager Instance;
+    
     [Header("References")]
     
     [SerializeField] private GameObject _enemy;
@@ -22,6 +25,18 @@ public class WaveManager : MonoBehaviour
     [ReadOnly] public int SpawnedEnemy;
     
 
+    private void Awake() 
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         EnemiesToSpawn = _baseSpawnCount;

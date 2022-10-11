@@ -9,6 +9,8 @@ namespace IdleGame
         
         public TextMeshProUGUI BuyText;
         public int BuyMode;
+
+        public bool IsPaused;
         
         private void Awake() 
         {
@@ -49,6 +51,8 @@ namespace IdleGame
                     break;
             }
         }
+        
+        
     }
    
 }
