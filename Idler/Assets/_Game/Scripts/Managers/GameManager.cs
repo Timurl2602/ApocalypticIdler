@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 namespace IdleGame
@@ -11,6 +13,7 @@ namespace IdleGame
         [Header("References")]
         public static GameManager Instance;
         public List<GeneratorScriptableObject> generators;
+        public GameObject Coin;
 
         [Header("Wave Variables")]
         public float Wave;
@@ -22,6 +25,7 @@ namespace IdleGame
         
         [Header("Player Variables")]
         public double Money;
+        public bool HasAttackBuff;
 
         private void Awake() 
         {
@@ -34,6 +38,15 @@ namespace IdleGame
             {
                 Destroy(gameObject);
             }
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                SpawnRandom();
+            }
+            
         }
 
         private void OnEnable()
@@ -59,6 +72,12 @@ namespace IdleGame
             HeroDamage = damageCalculation;
 
             Debug.Log(damageCalculation);
+        }
+        
+        public void SpawnRandom()
+        {
+            Vector3 randomPosition = new Vector3(Random.Range(-10, 12), Random.Range(-4, 3), -5);
+            Instantiate(Coin,randomPosition,Quaternion.identity);
         }
         
         public void AddMoney(double amount)
