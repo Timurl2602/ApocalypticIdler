@@ -1,18 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Plinko : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject _display;
+    [SerializeField] private GameObject _plinko;
+
+    [SerializeField] private bool _isPlayable;
+    
+    [Header("Timer")]
+    [SerializeField] private float _timerLength;
+    [SerializeField] private float _timer;
+    [SerializeField] private bool _isTimerRunning;
+    
+    private void Start()
     {
+        _isPlayable = true;
+        _timer = _timerLength;
+        _plinko.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (!_isPlayable)
+        {
+            _isTimerRunning = true;
+        }
+        
+        if (_isTimerRunning)
+        {
+            if (_timer > 0)
+            {
+                _timer -= Time.deltaTime;
+            }
+
+            if (_timer <= 0)
+            {
+                
+            }
+        }
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenPlinko()
     {
-        
+        _plinko.SetActive(true);
     }
+    
 }
