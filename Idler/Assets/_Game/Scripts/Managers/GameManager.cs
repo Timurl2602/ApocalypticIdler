@@ -22,7 +22,10 @@ namespace IdleGame
         public float BaseHeroDamage;
         public float HeroDamage;
         public int AttackSpeed;
-        
+
+        public float MoneyOnKillBase;
+        public float MoneyOnKill;
+
         [Header("Player Variables")]
         public double Money;
 
@@ -40,6 +43,11 @@ namespace IdleGame
             {
                 Destroy(gameObject);
             }
+        }
+
+        private void Start()
+        {
+            MoneyOnKill = MoneyOnKillBase;
         }
 
         private void OnEnable()
@@ -60,11 +68,23 @@ namespace IdleGame
 
             generator.Owned += upgradeAmount;
             generator.UpdateGeneratorCost();
-            
-            var damageCalculation = BaseHeroDamage * Mathf.Pow(generator.UpgradeIncrease, generator.Owned);
-            HeroDamage = damageCalculation;
 
-            Debug.Log(damageCalculation);
+            switch (upgradeName)
+            {
+                case "AttackUpgrade":
+                    var damageCalculation = BaseHeroDamage * Mathf.Pow(generator.UpgradeIncrease, generator.Owned);
+                    HeroDamage = damageCalculation;
+                    break;
+                case "AttackspeedUpgrade":
+                    var attackSpeedCalculation = AttackSpeed; 
+                    AttackSpeed = attackSpeedCalculation;
+                    break;
+                case "CurrencyIncreaseUpgrade":
+                    var moneyOnKillCalculation = MoneyOnKillBase * Mathf.Pow((float)1.1, generator.Owned - 1);
+                    MoneyOnKill = moneyOnKillCalculation;
+                    Debug.Log(MoneyOnKill);
+                    break;
+            }
         }
         
         public void SpawnRandom()

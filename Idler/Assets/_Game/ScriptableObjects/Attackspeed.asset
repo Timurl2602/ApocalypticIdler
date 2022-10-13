@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4224513b572947fcaa465e446c563785, type: 3}
   m_Name: Attackspeed
   m_EditorClassIdentifier: 
-  UpgradeName: Attackspeed
+  UpgradeName: AttackspeedUpgrade
   Owned: 1
-  UpgradeAmount: 10
-  BaseCost: 100
-  CostForNextUpgrade: 587.1700455685993
+  UpgradeAmount: 1
+  BaseCost: 500
+  CostForNextUpgrade: 501.6999999659402
   CostIncrease: 1.7
   UpgradeIncrease: 0

@@ -19,6 +19,7 @@ namespace IdleGame
         [SerializeField] private double _health;
         [SerializeField] private double _maxHealth;
         [SerializeField] private float _movementSpeed;
+        [SerializeField] private float _moneyOnKill;
 
         
         private int _randomPosition;
@@ -46,6 +47,7 @@ namespace IdleGame
 
             CalculateEnemyHealth();
             _health = _maxHealth;
+            _movementSpeed = Random.Range(2, 5);
 
             _randomPosition = Random.Range(-8, -5);
             transform.rotation = Quaternion.Euler(0, -180, 0);
@@ -63,7 +65,7 @@ namespace IdleGame
                 Destroy(gameObject);
                 Anim.SetBool("isDying", true);
                 WaveManager.EnemiesKilled++;
-                GameManager.Instance.AddMoney(50);
+                GameManager.Instance.AddMoney(GameManager.Instance.MoneyOnKill);
             }
             else
             {

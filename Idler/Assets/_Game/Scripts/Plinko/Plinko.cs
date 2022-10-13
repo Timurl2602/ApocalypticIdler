@@ -1,11 +1,13 @@
 using IdleGame;
+using TMPro;
 using UnityEngine;
 
 public class Plinko : MonoBehaviour
 {
     [SerializeField] private GameObject _display;
     [SerializeField] private GameObject _plinko;
-    
+    [SerializeField] private TextMeshProUGUI _playableText;
+
     private bool _isPlinkoOpen;
     
     [Header("Timer")]
@@ -25,10 +27,12 @@ public class Plinko : MonoBehaviour
         if (!GameManager.Instance.PlinkoCanBePlayed)
         {
             _isTimerRunning = true;
+            _playableText.text = "Come back soon";
         }
         else
         {
             _isTimerRunning = false;
+            _playableText.text = "Ready to play";
         }
 
         if (_isTimerRunning)
@@ -45,6 +49,7 @@ public class Plinko : MonoBehaviour
             }
             
         }
+        
 
         if (_isPlinkoOpen)
         {
