@@ -19,7 +19,7 @@ public class PlinkoRewardBoxes : MonoBehaviour
             Debug.Log("it worked");
             Debug.Log(_multiplier);
             Destroy(other);
-            var newBall = Instantiate(_ballPrefab, new Vector3(0, (float)4.5, 0), Quaternion.identity);
+            var newBall = Instantiate(_ballPrefab, new Vector3(0, (float)6, 0), Quaternion.identity);
             newBall.transform.SetParent(_plinkoBoard); 
         }
     }
