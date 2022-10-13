@@ -6,6 +6,7 @@ public class Plinko : MonoBehaviour
 {
     [SerializeField] private GameObject _display;
     [SerializeField] private GameObject _plinko;
+    [SerializeField] private GameObject _controlsText;
     [SerializeField] private TextMeshProUGUI _playableText;
 
     private bool _isPlinkoOpen;
@@ -54,10 +55,12 @@ public class Plinko : MonoBehaviour
         if (_isPlinkoOpen)
         {
             _display.SetActive(false);
+            _controlsText.SetActive(true);
         }
         else
         {
             _display.SetActive(true);
+            _controlsText.SetActive(false);
         }
         
     }
