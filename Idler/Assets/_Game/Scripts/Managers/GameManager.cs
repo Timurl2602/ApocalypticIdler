@@ -25,7 +25,9 @@ namespace IdleGame
         
         [Header("Player Variables")]
         public double Money;
-        public bool HasAttackBuff;
+
+        [Header("Player Variables")] 
+        public bool PlinkoCanBePlayed;
 
         private void Awake() 
         {
@@ -38,15 +40,6 @@ namespace IdleGame
             {
                 Destroy(gameObject);
             }
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                SpawnRandom();
-            }
-            
         }
 
         private void OnEnable()

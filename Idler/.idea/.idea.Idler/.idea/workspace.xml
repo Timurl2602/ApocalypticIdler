@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc422116-334d-4383-b553-0a5450a62b73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Idler/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Idler/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Plinko/Plinko.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Plinko/Plinko.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
-    </list>
+    <list default="true" id="bc422116-334d-4383-b553-0a5450a62b73" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +9,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Editor/ReadOnlyDrawer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Enemies/EnemyHealthbar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Plinko/Plinko.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Plinko/PlinkoRewardBoxes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/RollDice.cs" root0="FORCE_HIGHLIGHTING" />
@@ -39,7 +35,6 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "rider.run.widget.enabled.cache": "false",
     "settings.editor.selected.configurable": "preferences.build.unityPlugin",
     "vue.rearranger.settings.migration": "true"
   }
@@ -91,6 +86,7 @@
       <workItem from="1665386286036" duration="24008000" />
       <workItem from="1665472122062" duration="16869000" />
       <workItem from="1665561925549" duration="7221000" />
+      <workItem from="1665645008742" duration="8911000" />
     </task>
     <servers />
   </component>

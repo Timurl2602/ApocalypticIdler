@@ -12,6 +12,7 @@ namespace IdleGame
         public WaveManager WaveManager;
         public EnemyScriptableObject EnemyScriptable;
         public Animator Anim;
+        public EnemyHealthbar Healthbar;
         
         [Header("Stats")]
         
@@ -26,12 +27,7 @@ namespace IdleGame
         private new Vector3 _targetPosition;
 
         public double newHealth;
-        public double MaxHealth
-        {
-            get { return _maxHealth; }
-            set => MaxHealth = value;
-        }
-        
+
         public double Health
         {
             get { return Health; }
@@ -42,6 +38,7 @@ namespace IdleGame
         {
             _maxHealth = EnemyScriptable.Health;
             _movementSpeed = EnemyScriptable.Speed;
+            
             
             WaveManager = GameObject.Find("WaveManager").GetComponent<WaveManager>();
             Anim = GetComponent<Animator>();
@@ -58,6 +55,7 @@ namespace IdleGame
         private void Update()
         {
             
+            Healthbar.SetHealth((float)_health, (float)_maxHealth);
             transform.position = Vector3.MoveTowards(transform.position, _targetPosition, _movementSpeed * Time.deltaTime);
             
             if (_health <= 0)
@@ -95,6 +93,7 @@ namespace IdleGame
             while (_isDamageable)
             {
                 _health -= GameManager.Instance.HeroDamage;
+                Healthbar.SetHealth((float)_health, (float)_maxHealth);
                 yield return new WaitForSeconds(GameManager.Instance.AttackSpeed);
             }
         }

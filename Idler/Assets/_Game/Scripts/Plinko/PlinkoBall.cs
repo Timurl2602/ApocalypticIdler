@@ -1,4 +1,5 @@
 using System;
+using IdleGame;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -13,12 +14,16 @@ public class PlinkoBall : MonoBehaviour
 
     private void Start()
     {
-        CanMove = true;
+        
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
+        if (GameManager.Instance.PlinkoCanBePlayed)
+        {
+            CanMove = true;
+        }
         if (CanMove)
         {
             Vector3 moveOffset = Vector3.zero;
@@ -37,7 +42,7 @@ public class PlinkoBall : MonoBehaviour
 
             transform.position = newPosition;
 
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetKeyDown(KeyCode.E) && GameManager.Instance.PlinkoCanBePlayed)
             {
                 CanMove = false;
                 rigidbody.isKinematic = false;
@@ -45,4 +50,5 @@ public class PlinkoBall : MonoBehaviour
             }
         }
     }
+    
 }

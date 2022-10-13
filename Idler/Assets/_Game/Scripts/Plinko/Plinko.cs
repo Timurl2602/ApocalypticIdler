@@ -1,11 +1,12 @@
+using IdleGame;
 using UnityEngine;
 
 public class Plinko : MonoBehaviour
 {
     [SerializeField] private GameObject _display;
     [SerializeField] private GameObject _plinko;
-
-    [SerializeField] private bool _isPlayable;
+    
+    private bool _isPlinkoOpen;
     
     [Header("Timer")]
     [SerializeField] private float _timerLength;
@@ -14,18 +15,22 @@ public class Plinko : MonoBehaviour
     
     private void Start()
     {
-        _isPlayable = true;
+        GameManager.Instance.PlinkoCanBePlayed = true;
         _timer = _timerLength;
         _plinko.SetActive(false);
     }
 
     private void Update()
     {
-        if (!_isPlayable)
+        if (!GameManager.Instance.PlinkoCanBePlayed)
         {
             _isTimerRunning = true;
         }
-        
+        else
+        {
+            _isTimerRunning = false;
+        }
+
         if (_isTimerRunning)
         {
             if (_timer > 0)
@@ -35,15 +40,28 @@ public class Plinko : MonoBehaviour
 
             if (_timer <= 0)
             {
-                
+                GameManager.Instance.PlinkoCanBePlayed = true;
+                _timer = _timerLength;
             }
+            
+        }
+
+        if (_isPlinkoOpen)
+        {
+            _display.SetActive(false);
+        }
+        else
+        {
+            _display.SetActive(true);
         }
         
     }
 
+    
     public void OpenPlinko()
     {
-        _plinko.SetActive(true);
+        _isPlinkoOpen = !_isPlinkoOpen;
+        _plinko.SetActive(_isPlinkoOpen);
     }
-    
+
 }
