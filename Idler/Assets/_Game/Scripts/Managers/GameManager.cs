@@ -21,7 +21,7 @@ namespace IdleGame
         [Header("Hero Variables")]
         public float BaseHeroDamage;
         public float HeroDamage;
-        public int AttackSpeed;
+        public float AttackSpeed;
 
         public float MoneyOnKillBase;
         public float MoneyOnKill;
@@ -32,7 +32,7 @@ namespace IdleGame
         private string _moneyString;
         private string _tempMoneyString;
 
-        [Header("Player Variables")] 
+        [Header("Plinko Variables")] 
         public bool PlinkoCanBePlayed;
 
         private void Awake() 
@@ -57,6 +57,10 @@ namespace IdleGame
         private void Start()
         {
             MoneyOnKill = MoneyOnKillBase;
+            if (HeroDamage < 25)
+            {
+                HeroDamage = BaseHeroDamage;
+            }
         }
 
         private void OnEnable()
@@ -86,8 +90,8 @@ namespace IdleGame
                     PlayerPrefs.SetFloat("playerDamage", HeroDamage);
                     break;
                 case "AttackspeedUpgrade":
-                    var attackSpeedCalculation = AttackSpeed; 
-                    AttackSpeed = attackSpeedCalculation;
+                    var attackSpeedCalculation = AttackSpeed - 0.01;
+                    AttackSpeed = (float)attackSpeedCalculation;
                     break;
                 case "CurrencyIncreaseUpgrade":
                     var moneyOnKillCalculation = MoneyOnKillBase * Mathf.Pow((float)1.1, generator.Owned - 1);

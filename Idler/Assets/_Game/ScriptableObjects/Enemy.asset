@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Enemy
   m_EditorClassIdentifier: 
   Health: 100
-  HealthIncrease: 2.5
+  HealthIncrease: 1.7
   Speed: 3

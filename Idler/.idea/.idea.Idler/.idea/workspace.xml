@@ -41,6 +41,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../Idlebuild\Idler.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Tiny Roar\Desktop\Idlebuild" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.10f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;C:\Users\Tiny Roar\Desktop\Timur\ApocalypticIdler\Idler&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
@@ -88,7 +96,7 @@
       <workItem from="1665472122062" duration="16869000" />
       <workItem from="1665561925549" duration="7221000" />
       <workItem from="1665645008742" duration="13957000" />
-      <workItem from="1665733494098" duration="6926000" />
+      <workItem from="1665733494098" duration="11186000" />
     </task>
     <servers />
   </component>
