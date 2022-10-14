@@ -1599,7 +1599,7 @@ MonoBehaviour:
   _health: 100
   _maxHealth: 0
   _movementSpeed: 3.5
-  _moneyOnKill: 25
+  _moneyOnKill: 10
   newHealth: 0
 --- !u!50 &109141701514613383
 Rigidbody2D:

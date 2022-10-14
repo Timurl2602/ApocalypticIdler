@@ -51,6 +51,7 @@ namespace IdleGame
             Money = double.Parse(_tempMoneyString, System.Globalization.CultureInfo.InvariantCulture);
 
             Wave = PlayerPrefs.GetInt("wave");
+            HeroDamage = PlayerPrefs.GetFloat("playerDamage");
         }
 
         private void Start()
@@ -82,6 +83,7 @@ namespace IdleGame
                 case "AttackUpgrade":
                     var damageCalculation = BaseHeroDamage * Mathf.Pow(generator.UpgradeIncrease, generator.Owned);
                     HeroDamage = damageCalculation;
+                    PlayerPrefs.SetFloat("playerDamage", HeroDamage);
                     break;
                 case "AttackspeedUpgrade":
                     var attackSpeedCalculation = AttackSpeed; 

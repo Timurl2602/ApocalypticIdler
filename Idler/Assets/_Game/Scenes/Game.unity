@@ -18566,7 +18566,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 7.0771847, y: 5.035385}
+  m_Offset: {x: 8.661697, y: 5.035385}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -18577,7 +18577,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 15.154369, y: 14.522915}
+  m_Size: {x: 18.323395, y: 14.522915}
   m_EdgeRadius: 0
 --- !u!50 &1592977463
 Rigidbody2D:
@@ -22327,11 +22327,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 95ae58b17ff0b364f90edb28d3ee6f93, type: 2}
   Coin: {fileID: 5273469530832375101, guid: 762e1158adb95cc42befb96fc7eb5868, type: 3}
   Wave: 1
-  BaseHeroDamage: 50
-  HeroDamage: 50
+  BaseHeroDamage: 25
+  HeroDamage: 25
   AttackSpeed: 1
-  MoneyOnKillBase: 25
-  MoneyOnKill: 25
+  MoneyOnKillBase: 10
+  MoneyOnKill: 10
   Money: 0
   PlinkoCanBePlayed: 0
 --- !u!114 &1970593153

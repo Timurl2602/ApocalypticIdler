@@ -18,4 +18,4 @@ MonoBehaviour:
   BaseCost: 200
   CostForNextUpgrade: 201
   CostIncrease: 1.4
-  UpgradeIncrease: 1.2
+  UpgradeIncrease: 1.05

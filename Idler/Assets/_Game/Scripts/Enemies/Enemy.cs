@@ -19,9 +19,8 @@ namespace IdleGame
         [SerializeField] private double _health;
         [SerializeField] private double _maxHealth;
         [SerializeField] private float _movementSpeed;
-        [SerializeField] private float _moneyOnKill;
 
-        
+
         private int _randomPosition;
         [ReadOnly] private bool _isDamageable;
 
