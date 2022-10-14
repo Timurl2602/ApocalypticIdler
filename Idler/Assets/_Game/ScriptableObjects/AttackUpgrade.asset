@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: AttackUpgrade
   m_EditorClassIdentifier: 
   UpgradeName: AttackUpgrade
-  Owned: 1
+  Owned: 0
   UpgradeAmount: 1
   BaseCost: 200
-  CostForNextUpgrade: 201.19999976158147
-  CostIncrease: 1.2
-  UpgradeIncrease: 1.05
+  CostForNextUpgrade: 201
+  CostIncrease: 1.4
+  UpgradeIncrease: 1.2

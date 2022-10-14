@@ -16,7 +16,7 @@ namespace IdleGame
         public GameObject Coin;
 
         [Header("Wave Variables")]
-        public float Wave;
+        public int Wave;
 
         [Header("Hero Variables")]
         public float BaseHeroDamage;
@@ -28,6 +28,9 @@ namespace IdleGame
 
         [Header("Player Variables")]
         public double Money;
+
+        private string _moneyString;
+        private string _tempMoneyString;
 
         [Header("Player Variables")] 
         public bool PlinkoCanBePlayed;
@@ -43,6 +46,11 @@ namespace IdleGame
             {
                 Destroy(gameObject);
             }
+            
+            _tempMoneyString = PlayerPrefs.GetString("money");
+            Money = double.Parse(_tempMoneyString, System.Globalization.CultureInfo.InvariantCulture);
+
+            Wave = PlayerPrefs.GetInt("wave");
         }
 
         private void Start()
@@ -96,11 +104,20 @@ namespace IdleGame
         public void AddMoney(double amount)
         {
             Money += amount;
+            _moneyString = Money.ToString();
+            PlayerPrefs.SetString("money", _moneyString);
         }
 
         public void TakeMoney(double amount)
         {
             Money -= amount;
+            _moneyString = Money.ToString();
+            PlayerPrefs.SetString("money", _moneyString);
+        }
+        
+        public void ResetPlayerPrefs()
+        {
+            PlayerPrefs.DeleteAll();
         }
     }
 }

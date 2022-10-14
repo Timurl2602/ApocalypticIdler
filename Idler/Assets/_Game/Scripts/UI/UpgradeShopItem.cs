@@ -15,7 +15,6 @@ public class UpgradeShopItem : MonoBehaviour
 
         private void Start()
         {
-            _upgrade.Owned = 1;
             ShopInterface();
         }
 
@@ -50,8 +49,6 @@ public class UpgradeShopItem : MonoBehaviour
             _ownedText.text = "Owned: " + _upgrade.Owned;
         }
         
-        
-        
-        
+
 
 }

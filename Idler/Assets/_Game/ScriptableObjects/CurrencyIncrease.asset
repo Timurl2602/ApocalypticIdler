@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: CurrencyIncrease
   m_EditorClassIdentifier: 
   UpgradeName: CurrencyIncreaseUpgrade
-  Owned: 19
+  Owned: 0
   UpgradeAmount: 1
   BaseCost: 1000
-  CostForNextUpgrade: 3216.837890625
-  CostIncrease: 1.5
+  CostForNextUpgrade: 1001
+  CostIncrease: 1.7
   UpgradeIncrease: 0

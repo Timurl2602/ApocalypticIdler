@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Attackspeed
   m_EditorClassIdentifier: 
   UpgradeName: AttackspeedUpgrade
-  Owned: 1
+  Owned: 0
   UpgradeAmount: 1
   BaseCost: 500
-  CostForNextUpgrade: 501.6999999659402
-  CostIncrease: 1.7
+  CostForNextUpgrade: 501
+  CostIncrease: 2
   UpgradeIncrease: 0

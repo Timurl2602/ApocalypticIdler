@@ -36,10 +36,16 @@ public class WaveManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        EnemiesToSpawn = PlayerPrefs.GetFloat("enemyCount");
     }
     void Start()
     {
-        EnemiesToSpawn = _baseSpawnCount;
+        if (GameManager.Instance.Wave == 1)
+        {
+            EnemiesToSpawn = _baseSpawnCount;
+        }  
+        
         StartCoroutine(SpawnEnemy(_enemy));
     }
 
@@ -52,6 +58,7 @@ public class WaveManager : MonoBehaviour
             SpawnedEnemy = 0;
             WaveCalculation();
             StartCoroutine(SpawnEnemy(_enemy));
+            PlayerPrefs.SetInt("wave", GameManager.Instance.Wave);
         }
     }
 
@@ -70,6 +77,7 @@ public class WaveManager : MonoBehaviour
     private void WaveCalculation()
     {
         EnemiesToSpawn = (float)(_baseSpawnCount*Math.Pow(_spawnIncrease, GameManager.Instance.Wave));
+        PlayerPrefs.SetFloat("enemyCount", EnemiesToSpawn);
     }
 
 

@@ -14,7 +14,8 @@ public class PlinkoRewardBoxes : MonoBehaviour
         if(other.gameObject.CompareTag("Ball"))
         {
             var currentMoney = GameManager.Instance.Money;
-            GameManager.Instance.Money = currentMoney * _multiplier;
+            var moneyToAdd = currentMoney * _multiplier;
+            GameManager.Instance.AddMoney(moneyToAdd);
             GameManager.Instance.PlinkoCanBePlayed = false;
             Debug.Log("it worked");
             Debug.Log(_multiplier);
